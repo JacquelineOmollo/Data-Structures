@@ -14,6 +14,9 @@ return elements in Last In First Out order.
 3. What is the difference between using an array vs. a linked list when 
    implementing a Stack?
 """
+#FILO = First In Last Out
+# Verical Line from bottom to top
+
 class Stack:
     def __init__(self):
         self.size = 0
@@ -24,11 +27,11 @@ class Stack:
 
     def push(self, value):
         self.size = self.size + 1
-        self.storage.add_to_head(value)
+        self.storage.add_to_head(value) # Add from the top
 
     def pop(self):
         if self.size == 0:
             return None
         self.size -= 1
-        pooped = self.storage.remove_from_head()
+        pooped = self.storage.remove_from_head() #Remove from the top
         return pooped
