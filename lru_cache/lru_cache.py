@@ -10,7 +10,9 @@ class LRUCache:
     order, as well as a storage dict that provides fast access
     to every node stored in the cache.
     """
-    def __init__(self, limit=10):
+    #memoization is saving the result to cache for future use.
+
+    def __init__(self, limit=10):  #Holding the data
         self.larger_node = limit
         self.current_number = 0
         self.dll = DoublyLinkedList()
@@ -23,12 +25,13 @@ class LRUCache:
     Returns the value associated with the key or None if the
     key-value pair doesn't exist in the cache.
     """
+
     def get(self, key):
         if key not in self.dict:
             return None
-
+    # moves the most recently used key-value pair to the end
         node = self.dll.head
-        while node is not None:
+        while node is not None: #Goes though each key
             if key == node.value[0]:
                 self.dll.move_to_front(node)
                 break
