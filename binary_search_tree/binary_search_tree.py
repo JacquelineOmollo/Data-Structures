@@ -46,7 +46,7 @@ class BSTNode:
             return self.right.contains(target) #Goes to the right node of the tree
 
     # Return the maximum value found in the tree
-    def get_max(self):
+    def get_max(self): #Looks at the right side of th tree for max value
         if not self.right:
             return self.value
         self.right.get_max()
